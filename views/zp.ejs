@@ -1,0 +1,286 @@
+<DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<title>圣象力量 欢乐点赞</title>
+<link type="text/css" rel="stylesheet" href="/stylesheets/popup.css"/>
+<style>
+*{margin:0;padding:0;}
+html,body{width:100%;height:100%;}
+a{text-decoration:none;}
+.big_btn{width:90%;font-size:2em;font-weight:bold;display:block;margin:1em auto;background-color:#fbf522;text-align:center;padding:0.5em 0;color:#333;border-radius:5px;}
+.big_btn:active{background-color:#fbe633;}
+.hide{display:none;}
+.block_img{display:block;width:100%;}
+.form_section{width:90%;display:block;margin:1em 5%;}
+label{display:block;height:2em;line-height:2em;font-size:1.5em;padding-left:0.2em;}
+input{width:90%;font-size:1.5em;padding:0.5em;border-radius:2px;border:1px solid #ccc;background-color:white;display:block;margin:0 auto;
+    -webkit-user-modify:read-write-plaintext-only;
+}
+input:focus{border:1px solid #d56796;}
+select{
+      display: block;
+  width: 95%;
+   margin:0 auto;
+  padding: .3em;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 0;
+  -webkit-appearance: none;
+  -webkit-transition: border-color .15s ease-in-out,-webkit-box-shadow .15s ease-in-out;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none!important;
+  -webkit-border-radius: 0;
+  background: #fff url(http://ac-qvh9m8c3.clouddn.com/TpTXuehXAUFfLCadTqBYEjxP3Qf0wBfYxSpHzUIC.svg) no-repeat 100% center;
+}
+.md_div{width:90%;margin:1em auto;background-color:#EDE7E9;padding:10px 5px;border-radius:5px;}
+.red_span{font-size:1.2em;height:1.5em;line-height:1.5em;color:white;background-color:red;padding:0.4em;}
+p{margin:0.5em 0;color:#333;}
+.nspan{color:green;}
+#outercount {
+  position: relative;
+  width: 100%;
+  height:310px;
+}
+
+#outer {
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.zp0{
+    transform:rotate(0deg);
+    -webkit-transform:rotate(0deg);
+    -m-transform:rotate(0deg);
+}
+.zp60{
+    transform:rotate(60deg);
+    -webkit-transform:rotate(60deg);
+    -m-transform:rotate(60deg);
+}
+.zp120{
+    transform:rotate(120deg);
+    -webkit-transform:rotate(120deg);
+    -m-transform:rotate(120deg);
+}
+.zp180{
+    transform:rotate(180deg);
+    -webkit-transform:rotate(180deg);
+    -m-transform:rotate(180deg);
+}
+.zp240{
+    transform:rotate(240deg);
+    -webkit-transform:rotate(240deg);
+    -m-transform:rotate(240deg);
+}
+.zp300{
+    transform:rotate(300deg);
+    -webkit-transform:rotate(300deg);
+    -m-transform:rotate(300deg);
+}
+#outercount img{
+  display: block;
+  margin: 0 auto;
+}
+
+#inner-count {
+  position: absolute;
+  width: 100%;
+  top: 85px;
+}
+#inner {
+  width: 142px;
+  max-width: 142px;
+  height: 142px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+#inner img{
+    width:100%;height:100%;
+}
+#mes_p{text-align:center;height:2em;line-height:2em;}
+a:focus,input:focus{-webkit-tap-highlight-color:rgba(0,0,0,0);
+    -webkit-user-modify:read-write-plaintext-only;
+}
+.img1 {
+  width:100%;
+  padding-top:53.244%;
+  background:url('http://ac-pvjnkart.clouddn.com/f6f50a0b4facff77c062.jpg') no-repeat;
+  background-position: 0 0;
+  background-size: contain;
+}
+</style>
+</head>
+<body>
+<div id="lottery_page">
+    <div class="img1"></div>
+    <div class="md_div">
+        <span class="red_span">获奖名单</span>
+        <p id="wdprize" class="nspan"></p>
+        <p><span class="nspan" id="info_num"></span>人参与&nbsp;&nbsp;</p>
+    </div>
+    <p id="mes_p"></p>
+    <div id="outercount">
+        <div id="outer-count">
+            <div id="outer">
+                <img src="http://ac-pvjnkart.clouddn.com/88562bf01f77597d3b3c.png" width="310px"/>
+            </div>
+        </div>
+        <div id="inner-count">
+            <div id="inner">
+                <img src="http://ac-pvjnkart.clouddn.com/fb88ebe11c0eb66b.png?imageView2/1/w/142/h/142"/>
+            </div>
+        </div>
+    </div>
+    <div class="md_div">
+        <span class="red_span">奖项设置</span>
+        <p>
+        <span class="nspan" id="name_span">亲爱的<%= name%></span>,欢迎参加“圣象力量 为您点赞”活动。
+        </p>
+    </div>
+
+    <div class="md_div">
+        <span class="red_span">活动说明</span>
+
+		<p>即日起，凡进店的客户均可参与本次活动，具体操作如下:</p>
+		<br>
+        1.每个微信账号仅限一次抽奖机会。<br><br>
+        2.查看已中奖礼品请查看转盘上方“我的奖品”<br><br>
+        3.奖品设立:   精美礼品\钻石碗二件套\精品毛巾\大号折叠篮\名牌手机<br><br>
+        4.  兑奖方式：除名牌手机外，其它礼品即抽即送；中奖率100%<br><br>
+        5. 在法律允许范围内活动解释权归圣象集团所有<br><br>
+        <p>
+        详请请咨询圣象地板各专卖店<br>
+        TEL: <a href="tel://0791-87165188">0791-87165188</a>
+        </p>
+
+    </div>
+        <br>
+        <br>
+</div>
+<div class="hide">
+    <form id="quan_form">
+    <input type="text" value="<%= cid%>" placeholder="请输入您获得的ID号码" id="quanno"/>
+    </form>
+</div>
+<script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.4/zepto.min.js"></script>
+<script type="text/javascript" src="./js/popup.js"></script>
+<script>
+var uid = '<%= uid%>';
+var bAward = <%= award.award%>;
+var prize = '';
+var zpCss = ['zp60','zp120','zp180','zp240','zp300','zp0'];
+var inner = document.getElementById('inner'),outter = document.getElementById('outer');
+if(bAward) {
+    prize = '<%= award.prize%>';
+    $('#wdprize').html("您中了" + prize);
+}
+
+$(function() {
+  $.getJSON('/user_num',{}, function(data) {
+    $('#info_num').html(data.count);
+  })
+    $('#inner').click(function() {
+        if(bAward) {
+            alert('您已抽过奖，感谢您的参与');
+            return;
+        }
+
+         $('body').popup({title:'请输入您的抽奖券号码',formId:'quan_form',onOk:function(){
+             var quanno = $.trim($('#quanno').val());
+             quanno = quanno.toLowerCase();
+             if(quanno.length == 0) {
+                 alert('请输入您的抽奖券号码');
+                 return;
+             }
+
+             $.getJSON('/check_card?cid=' + quanno + '&uid=' + uid, function(result) {
+                 if(result.status == 'ok') {
+                  goAward();
+                 } else {
+                     alert(result.message);
+                 }
+             });
+         }});
+
+    });
+});
+
+function getPrizeByType(type) {
+    var awardArr = ["","品牌手机","折叠篮","精品毛巾","钻石碗","精美礼品"];
+    return awardArr[type];
+}
+
+function goAward() {
+    $.getJSON('/award', {uid: uid}, function(result) {
+        if(result.status == 'ok') {
+            prize = result.prize;
+            console.log(prize);
+            var deg = getDegByPrize(prize);
+            $('#mes_p').html('幸运转盘转起来吧...');
+            start(deg);
+        } else {
+            alert(result.message);
+        }
+    });
+}
+
+function start(deg) {
+    var degArr = [];
+   var n = deg/60;
+   for(i =0; i < 10; i++) {
+        for(j= 0; j < 6;j++) {
+           degArr.push(zpCss[j]);
+        }
+   }
+
+   for(k = 0; k < n; k++) {
+        degArr.push(zpCss[k]);
+   }
+
+
+   var zpInterval = setInterval(function(){
+        if(degArr.length <= 0) {
+            clearInterval(zpInterval);
+            step();
+        } else {
+            var cur_zp_css = degArr.shift(0);
+            outter.className = cur_zp_css;
+        }
+   },50);
+}
+
+function step() {
+    $('#wdprize').html('您中了' + getPrizeByType(prize));
+    setTimeout(function() {
+        window.location.reload();
+    },4000);
+}
+
+
+function getDegByPrize(n) {
+    if(n == 5) {
+        return 180;
+    } else if(n == 1) {
+        return 240;
+    } else if(n == 3) {
+        return 120;
+    } else if(n == 2) {
+        return 0;
+    } else if(n == 4) {
+        return 300;
+    }
+}
+
+</script>
+</body>
+</html>

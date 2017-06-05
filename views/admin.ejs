@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link type="text/css" rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.3.0/css/amazeui.min.css"/>
+<title>圣象力量 快乐点赞</title>
+<style>
+*{padding:0;margin:0;}
+.wrapper{width:1000px;margin:2em auto;}
+.tj_div span{font-size:20px;color:red;}
+</style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="tj_div">
+           <span id="user_count"></span>条用户信息<br>
+           <span id="q128_count"><%=ac.c1%></span>台手机被抽<br>
+           <span id="q88_count"><%=ac.c2%></span>个折叠篮被抽<br>
+           <span id="q68_count"><%=ac.c3%></span>个精品毛巾被抽<br>
+           <span id="q28_count"><%=ac.c4%></span>个钻石碗被抽<br>
+           <span id="q8_count"><%=ac.c5%></span>个精品礼品被抽<br>
+        </div>
+        <div class="am-g">
+            <div class="am-u-sm-3 am-u-sm-centered">获奖用户</div>
+        </div>
+        <table class="am-table">
+            <thead >
+                <tr>
+                    <th>姓名</th>
+                    <th>手机号</th>
+                    <th>店</th>
+                    <th>号码</th>
+                    <th>奖项</th>
+                    <th>时间</th>
+                    <!-- <th>图片</th> -->
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            <%for(var i = 0; i < results.length; i++) {%>
+                <tr>
+                    <td><%= results[i].get('name')%></td>
+                    <td><%= results[i].get('phone')%></td>
+                    <td><%= results[i].get('shop')%></td>
+                    <td><%= results[i].get('cid')%></td>
+                    <td><%= results[i].get('type') == 1?'手机':results[i].get('type')==2?'折叠篮':results[i].get('type')==3?'毛巾':results[i].get('type')==4?'钻石碗':'精品礼品'%></td>
+                    <td><%= results[i].createdAt%></td>
+                </tr>
+            <%}%>
+            </tbody>
+        </table>
+        <div class="am-u-sm-3 am-u-sm-centered">
+            <%if(prepage > 0) {%>
+            <a class="am-btn am-btn-default" href="/admin?page=<%=prepage%>"><i></i> 上一页</a>
+            <%}%>
+            <%if(nextpage > 0) {%>
+            <a class="am-btn am-btn-default" href = "/admin?page=<%=nextpage%>"><i></i> 下一页</a>
+            <%}%>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="http://cdn.bootcss.com/zepto/1.1.4/zepto.min.js"></script>
+    <script>
+    $.getJSON('/user_num',{}, function(data) {
+      $('#user_count').html(data.count);
+    })
+    </script>
+</body>
+</html>
